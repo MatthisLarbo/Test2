@@ -8,17 +8,18 @@ import java.util.Map;
 public class ThreadedServer extends Thread
 {
 	private static int portNumber = 5050;
-    private Map<String, Curve> myothersclients;
+    private static Map<String, Curve> myothersclients;
     
     //Constructor of ThreadedServer
     public ThreadedServer (Map<String, Curve> myothersclients)
     {
-    	this.myothersclients = myothersclients;
+    	ThreadedServer.myothersclients = myothersclients;
     }
         
     //Execute the process
-    public void run() { //Overriding 
-      
+    //public void run() { //Overriding 
+      public static void main(String args[]) {
+    	  
     	ServerSocket serverSocket = null;
     	boolean listening = true;
         
